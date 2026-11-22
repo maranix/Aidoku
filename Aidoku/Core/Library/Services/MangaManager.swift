@@ -756,30 +756,27 @@ extension MangaManager {
 
     func resetCover(manga: AidokuRunner.Manga) async -> String? {
         var cover: String?
-        defer {
-            // set new cover and get old cover url
-            let originalCover = await CoreDataManager.shared.setCover(
-                mangaId: manga.identifier,
-                coverUrl: cover,
-                original: true
+        if let source = await SourceManager.shared.source(for: manga.sourceKey) {
+            // fetch new manga details (for cover)
+            let newManga = try? await source.getMangaUpdate(
+                manga: manga,
+                needsDetails: true,
+                needsChapters: false
             )
-
-            // if the original cover is an aidoku image, remove it
-            if originalCover != cover, let originalCover, let url = URL(string: originalCover)?.toAidokuFileUrl() {
-                url.removeItem()
-            }
+            cover = newManga?.cover
         }
 
-        guard let source = await SourceManager.shared.source(for: manga.sourceKey) else { return nil }
-
-        // fetch new manga details (for cover)
-        let newManga = try? await source.getMangaUpdate(
-            manga: manga,
-            needsDetails: true,
-            needsChapters: false
+        // set new cover and get old cover url
+        let originalCover = await CoreDataManager.shared.setCover(
+            mangaId: manga.identifier,
+            coverUrl: cover,
+            original: true
         )
 
-        cover = newManga?.cover
+        // if the original cover is an aidoku image, remove it
+        if originalCover != cover, let originalCover, let url = URL(string: originalCover)?.toAidokuFileUrl() {
+            url.removeItem()
+        }
 
         return cover
     }
