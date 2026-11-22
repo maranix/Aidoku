@@ -1,5 +1,12 @@
 # Aidoku
 
+> [!IMPORTANT]
+> **Notice / Disclaimer**
+> This branch is maintained solely to keep backwards compatibility with Xcode 26 only.
+> No ownership, copyright, or intellectual property is claimed over the product.
+> It is merely for personal usage and is not used for redistribution or sale.
+> Any code changes will be published on the `xc26` branch.
+
 A free and open source manga reading application for iOS, iPadOS, and macOS.
 
 <p>
