@@ -496,6 +496,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 66X62GDP94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Aidoku/Info.plist;
@@ -516,6 +517,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = in.maranix.Aidoku;
 				PRODUCT_NAME = Aidoku;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -539,6 +541,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 66X62GDP94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Aidoku/Info.plist;
@@ -559,6 +562,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = in.maranix.Aidoku;
 				PRODUCT_NAME = Aidoku;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
